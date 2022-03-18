@@ -12,8 +12,6 @@ export const headerModal = () => {
         modal.style.display = 'block';
         overlay.style.display = 'block';
         blockBody()
-        console.log('2');
-
     }
 
     const closeModal = () => {
