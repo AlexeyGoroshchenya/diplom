@@ -1,5 +1,4 @@
-import one from './modules/one';
-import two from './modules/two';
+import { headerModal } from './modules/headerModal';
 
-one();
-two();
+
+headerModal();
