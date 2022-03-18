@@ -1,3 +1,7 @@
+
+import { blockBody } from './helpers';
+import { unblockBody } from './helpers';
+
 export const headerModal = () => {
 
     const btnOpenModal = document.querySelector('.button')
@@ -7,11 +11,15 @@ export const headerModal = () => {
     const openModal = () => {
         modal.style.display = 'block';
         overlay.style.display = 'block';
+        blockBody()
+        console.log('2');
+
     }
 
     const closeModal = () => {
         modal.style.display = 'none';
         overlay.style.display = 'none';
+        unblockBody()
     }
 
     btnOpenModal.addEventListener('click', (e) => {

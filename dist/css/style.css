@@ -1594,11 +1594,15 @@ input.error {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+
+  min-width: 0;
 }
 
 .benefits__item {
   width: 100%;
   max-width: 185px;
+  display: inline-block;
+
 }
 
 .benefits-arrows {
