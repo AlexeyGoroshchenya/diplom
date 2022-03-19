@@ -16,7 +16,7 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_headerModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/headerModal */ \"./modules/headerModal.js\");\n/* harmony import */ var _modules_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/swiper */ \"./modules/swiper.js\");\n/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/timer */ \"./modules/timer.js\");\n\r\n\r\n\r\n\r\n(0,_modules_headerModal__WEBPACK_IMPORTED_MODULE_0__.headerModal)();\r\n(0,_modules_swiper__WEBPACK_IMPORTED_MODULE_1__.swiper)();\r\n(0,_modules_timer__WEBPACK_IMPORTED_MODULE_2__.timer)('01 april 2022');\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_headerModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/headerModal */ \"./modules/headerModal.js\");\n/* harmony import */ var _modules_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/swiper */ \"./modules/swiper.js\");\n/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/timer */ \"./modules/timer.js\");\n/* harmony import */ var _modules_scroll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/scroll */ \"./modules/scroll.js\");\n\r\n\r\n\r\n\r\n\r\n(0,_modules_headerModal__WEBPACK_IMPORTED_MODULE_0__.headerModal)();\r\n(0,_modules_swiper__WEBPACK_IMPORTED_MODULE_1__.swiper)();\r\n(0,_modules_timer__WEBPACK_IMPORTED_MODULE_2__.timer)('01 april 2022');\r\n(0,_modules_scroll__WEBPACK_IMPORTED_MODULE_3__.scroll)();\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -40,13 +40,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./modules/scroll.js":
+/*!***************************!*\
+  !*** ./modules/scroll.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"scroll\": () => (/* binding */ scroll)\n/* harmony export */ });\nconst scroll = () => {\r\n\r\n    const btnScrollUp = document.querySelector('.smooth-scroll')\r\n    const borderBtnLine = (document.querySelector('#offer').offsetHeight +\r\n        document.querySelector('#offer').offsetTop) - 50;\r\n\r\n    const moveBtn = (str) => {\r\n        btnScrollUp.style.transitionDuration = '0.5s'\r\n        if (str === 'hide') {\r\n            btnScrollUp.style.transform = 'translateX(200%)';\r\n        } else if (str === 'show') {\r\n            btnScrollUp.style.transform = 'translateX(0%)';\r\n        }\r\n    }\r\n\r\n    const init = () => {\r\n        btnScrollUp.style.transform = 'translateX(200%)';\r\n\r\n        window.addEventListener('scroll', function () {\r\n\r\n            if (scrollY >= borderBtnLine) {\r\n                moveBtn('show')\r\n            } else {\r\n                moveBtn('hide')\r\n            }\r\n        });\r\n\r\n        btnScrollUp.addEventListener('click', (event) => {\r\n            event.preventDefault();\r\n\r\n            const goUp = document.getElementById('header');\r\n            goUp.scrollIntoView({ block: \"start\", behavior: \"smooth\" });\r\n        })\r\n    }\r\n\r\n    init()\r\n\r\n\r\n}\n\n//# sourceURL=webpack:///./modules/scroll.js?");
+
+/***/ }),
+
 /***/ "./modules/swiper.js":
 /*!***************************!*\
   !*** ./modules/swiper.js ***!
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"swiper\": () => (/* binding */ swiper)\n/* harmony export */ });\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ \"../node_modules/swiper/swiper.esm.js\");\n\r\n\r\n\r\nconst swiper = () => {\r\n\r\n\r\n\r\n    const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('.swiper', {\r\n        slidesPerView: 1,\r\n        width: 185,\r\n        //spaceBetween: 30,\r\n        //loop: true,\r\n        modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],\r\n        autoplay: {\r\n            delay: 3000,\r\n            disableOnInteraction: true,\r\n        },\r\n        //modules: [Navigation],\r\n        navigation: {\r\n            nextEl: '.benefits__arrow--right',\r\n            prevEl: '.benefits__arrow--left',\r\n        },\r\n        //breakpoints: {\r\n        //    576: {\r\n        //        slidesPerView: 3,\r\n        //    }\r\n        //}\r\n\r\n    }\r\n    );\r\n\r\n}\n\n//# sourceURL=webpack:///./modules/swiper.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"swiper\": () => (/* binding */ swiper)\n/* harmony export */ });\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ \"../node_modules/swiper/swiper.esm.js\");\n\r\n\r\n\r\nconst swiper = () => {\r\n\r\n\r\n\r\n    const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('.swiper', {\r\n        slidesPerView: 1,\r\n        setWrapperSize: false,\r\n        width: 185,\r\n        //spaceBetween: 30,\r\n        //loop: true,\r\n        modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],\r\n        autoplay: {\r\n            delay: 3000,\r\n            disableOnInteraction: true,\r\n        },\r\n        //modules: [Navigation],\r\n        navigation: {\r\n            nextEl: '.benefits__arrow--right',\r\n            prevEl: '.benefits__arrow--left',\r\n        },\r\n        //breakpoints: {\r\n        //    576: {\r\n        //        slidesPerView: 3,\r\n        //    }\r\n        //}\r\n\r\n    }\r\n    );\r\n\r\n}\n\n//# sourceURL=webpack:///./modules/swiper.js?");
 
 /***/ }),
 

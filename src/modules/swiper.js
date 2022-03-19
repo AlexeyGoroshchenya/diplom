@@ -7,6 +7,7 @@ export const swiper = () => {
 
     const swiper = new Swiper('.swiper', {
         slidesPerView: 1,
+        setWrapperSize: false,
         width: 185,
         //spaceBetween: 30,
         //loop: true,
