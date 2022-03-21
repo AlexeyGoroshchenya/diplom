@@ -1535,11 +1535,23 @@ input.error {
   background: url(../images/order5-bg.jpg) no-repeat center;
 }
 .header-modal {
-  display: none;
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 150%;
+  transform: translate(100%, 100%);
+  transition-duration: 0.5s;
+
 }
 
 .services-modal {
-  display: none;
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 150%;
+  transform: translate(100%, 100%);
+  transition-duration: 0.5s;
+  
 }
 
 .services-modal--opened {
@@ -1548,6 +1560,7 @@ input.error {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
+  transition-duration: 0.5s;
 }
 
 .header-modal--opened {
@@ -1556,6 +1569,7 @@ input.error {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
+  transition-duration: 0.5s;
 }
 
 .header-modal__close {
@@ -1598,7 +1612,8 @@ input.error {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-/*
+  width: 100%;
+  /*
   min-width: 0;*/
 }
 

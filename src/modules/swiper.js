@@ -7,25 +7,32 @@ export const swiper = () => {
 
     const swiper = new Swiper('.swiper', {
         slidesPerView: 1,
-        setWrapperSize: false,
+        //speed: 2000,
+        centeredSlides: true,
+        setWrapperSize: true,
         width: 185,
-        //spaceBetween: 30,
-        //loop: true,
+        spaceBetween: 95,
+        translate: 280,
+        virtualTranslate: false,
+        loop: true,
+        //loopedSlides: 0,
+        loopAdditionalSlides: 10,
         modules: [Autoplay, Navigation],
         autoplay: {
-            delay: 3000,
+            delay: 2000,
             disableOnInteraction: true,
+            stopOnLastSlide: false,
         },
-        //modules: [Navigation],
+
         navigation: {
             nextEl: '.benefits__arrow--right',
             prevEl: '.benefits__arrow--left',
         },
-        //breakpoints: {
-        //    576: {
-        //        slidesPerView: 3,
-        //    }
-        //}
+        breakpoints: {
+            576: {
+                slidesPerView: 3,
+            }
+        }
 
     }
     );

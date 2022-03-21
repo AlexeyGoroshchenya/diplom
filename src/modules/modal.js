@@ -9,8 +9,6 @@ export const modal = () => {
     const servicesModal = document.querySelector('.services-modal');
 
     const openModal = (element, classElem) => {
-        element.style.transitionDuration = '0.5s';
-        element.style.display = 'block';
         element.classList.add(classElem);
         overlay.style.display = 'block';
         blockBody();
@@ -26,11 +24,10 @@ export const modal = () => {
     const init = () => {
         document.body.addEventListener('click', (e) => {
 
-            //console.log(e.target);
-            if (e.target.classList.contains('header-button')) {
+            if (e.target.matches('a.btn-block')) {
                 e.preventDefault()
                 openModal(headerModal, 'header-modal--opened')
-            } else if (e.target.classList.contains('fancyboxModal')) {
+            } else if (e.target.matches('a.btn-success')) {
                 e.preventDefault()
                 openModal(servicesModal, 'services-modal--opened')
             } else if (e.target.classList.contains('header-modal__close')) {
@@ -41,11 +38,10 @@ export const modal = () => {
                 closeModal(servicesModal, 'services-modal--opened')
             }
         })
-
         headerModal.classList.remove('header-modal--opened');
-        headerModal.style.display = 'block';
+
         servicesModal.classList.remove('services-modal--opened');
-        servicesModal.style.display = 'block';
+
     }
 
     init()
