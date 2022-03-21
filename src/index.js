@@ -5,6 +5,7 @@ import { scroll } from './modules/scroll';
 import { calc } from './modules/calc';
 import { validation } from './modules/validation';
 import { sendForm } from './modules/sendForm';
+import { documents } from './modules/documents';
 
 modal();
 swiper();
@@ -17,3 +18,4 @@ scroll();
 calc(100);
 validation();
 sendForm('.form-horizontal');
+documents()
