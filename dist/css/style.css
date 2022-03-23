@@ -536,10 +536,15 @@ input.error {
   background-color: #466a78;
 }
 .service-block {
+  display: none;
   position: relative;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   margin: 30px 20px 30px;
+}
+
+.service-block.slide-active{
+  display: block;
 }
 .service-image img {
   border-top-left-radius: 10px;
@@ -572,6 +577,7 @@ input.error {
   line-height: 1.4;
   margin-bottom: 0;
 }
+
 .services-image_overlay {
   position: absolute;
   top: 0;
