@@ -1657,20 +1657,11 @@ input.error {
 }
 
 .benefits-wrap {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  width: 100%;
-  overflow: hidden;
-  /*
-  min-width: 0;*/
+  text-align: center;
 }
 
 .benefits__item {
   width: 100%;
-  max-width: 185px;
-  
-
 }
 
 .benefits-arrows {
