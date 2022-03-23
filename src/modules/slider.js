@@ -7,55 +7,68 @@ export const slider = () => {
     let currentSlide = 0;
     let interval;
     let timeInterval = 3000;
+    let bigScreen = false;
 
-    const checkCorrectCurrent = (num = 1) => {
-        if (currentSlide >= slides.length) {
-            currentSlide = 0
-        }
-        if (currentSlide < 0) {
-            currentSlide = slides.length - num
-        }
-
+    const pervSlide = (elems, index) => {
+        let secondSlide = index + 1;
+        elems[index].classList.remove('slide-active');
+        if (bigScreen) { elems[secondSlide].classList.remove('slide-active'); }
     }
 
-    const changeSlide = (elems, index) => {
-        if (window.screen.width < 576) {
-            elems[index].classList.toggle('slide-active');
-        } else {
-            elems[index].classList.toggle('slide-active');
-            elems[(index + 1)].classList.toggle('slide-active');
-        }
-
+    const nextSlide = (elems, index) => {
+        let secondSlide = index + 1;
+        elems[index].classList.add('slide-active');
+        if (bigScreen) { elems[secondSlide].classList.add('slide-active'); }
     }
 
     const changeCurrent = (direction) => {
+
+        const checkCorrectCurrent = (num = 1) => {
+            if (currentSlide >= slides.length) {
+                currentSlide = 0
+            }
+            if (currentSlide < 0) {
+                currentSlide = slides.length - num
+            }
+        }
+
         if (direction === 'perv') {
-            if (window.screen.width < 576) {
+            if (!bigScreen) {
                 currentSlide--;
             } else {
                 currentSlide -= 2;
                 checkCorrectCurrent(2)
             }
         } else {
-            if (window.screen.width < 576) {
+
+            if (!bigScreen) {
                 currentSlide++;
             } else {
                 currentSlide += 2;
             }
         }
+
         checkCorrectCurrent()
     }
 
     const autoSlide = () => {
-        changeSlide(slides, currentSlide);
+        pervSlide(slides, currentSlide);
 
         changeCurrent()
 
-        changeSlide(slides, currentSlide);
+        nextSlide(slides, currentSlide);
     }
 
     const startSlide = (timer = 1500) => {
-        interval = setInterval(autoSlide, timer)
+        interval = setInterval(() => {
+            autoSlide()
+            if (window.screen.width > 576) {
+                bigScreen = true;
+            } else {
+                bigScreen = false;
+            }
+        }, timer)
+
     }
 
     const stopSlide = () => {
@@ -63,23 +76,27 @@ export const slider = () => {
     }
 
     const init = () => {
-        slides.forEach((slide, index) => {
 
-
-        })
-        if (window.screen.width < 576) {
-            slides[0].classList.add('slide-active')
+        if (window.screen.width > 576) {
+            bigScreen = true;
         } else {
-            slides[0].classList.add('slide-active')
-            slides[1].classList.add('slide-active')
+            bigScreen = false;
         }
+
+        slides.forEach((slide, index) => {
+            if (!bigScreen) {
+                if (index < 1) slide.classList.add('slide-active')
+            } else {
+                if (index < 2) slide.classList.add('slide-active')
+            }
+        })
 
         startSlide(timeInterval)
     }
 
     arrows.addEventListener('click', (e) => {
 
-        changeSlide(slides, currentSlide);
+        pervSlide(slides, currentSlide);
 
         if (e.target.closest('.services__arrow--right')) {
             changeCurrent()
@@ -87,7 +104,7 @@ export const slider = () => {
             changeCurrent('perv')
         }
 
-        changeSlide(slides, currentSlide);
+        nextSlide(slides, currentSlide);
     })
 
     sliderBlock.addEventListener('mouseenter', (e) => {
@@ -103,7 +120,5 @@ export const slider = () => {
     }, true)
 
     init()
-
-
 
 }
