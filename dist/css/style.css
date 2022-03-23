@@ -501,6 +501,7 @@ input.error {
 }
 .benefits-inner {
   text-align: center;
+  
 }
 .benefit-image {
   margin-bottom: 22px;
@@ -1660,6 +1661,7 @@ input.error {
   justify-content: space-between;
   margin: 0 auto;
   width: 100%;
+  overflow: hidden;
   /*
   min-width: 0;*/
 }

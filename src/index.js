@@ -1,5 +1,5 @@
 import { modal } from './modules/modal';
-//import { swiper } from './modules/swiper';
+import { swiper } from './modules/swiper';
 import { timer } from './modules/timer';
 import { scroll } from './modules/scroll';
 import { calc } from './modules/calc';
@@ -9,7 +9,7 @@ import { documents } from './modules/documents';
 import { slider } from './modules/slider';
 
 modal();
-//swiper();
+swiper();
 timer('01 april 2022');
 scroll();
 //Формула цены в п.3 ТЗ для калькулятора дает в результате
