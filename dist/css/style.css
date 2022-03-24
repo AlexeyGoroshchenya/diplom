@@ -817,11 +817,12 @@ p.services-image_mobile {
   top:0;
   left:0;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.822);
+  background-color: rgba(32, 32, 32, 0.822);
 }
 
 .documentBigImg img{
   height: 100%;
+  max-width: 100%;
   object-fit:contain;
   position:absolute;
   z-index: 9999; 
@@ -829,17 +830,17 @@ p.services-image_mobile {
   left:50%;
   transform: translateX(-50%);
 }
-.documentBigImg span{
-  color: rgb(228, 228, 228);
-  font-size: 70px;
+.documentBigImg p{
   position:absolute;
   top: 50px;
   right: 50px;
   z-index: 9999; 
-  transform: rotate(45deg)
+  color: rgb(8, 8, 8);
+  font-size: 70px;
+  transform: rotate(45deg);
 }
 
-.documentBigImg span:hover{
+.documentBigImg p:hover{
   transform: rotate(225deg);
   transition-duration: 0.3s;
 }

@@ -57,7 +57,6 @@ export const sendForm = (formClass) => {
         }
 
         const sendData = (data) => {
-            console.log(data);
             return fetch('https://jsonplaceholder.typicode.com/posts', {
                 method: 'POST',
                 body: JSON.stringify(data),
@@ -92,6 +91,7 @@ export const sendForm = (formClass) => {
                         showSubmitStatus(successText)
 
                         setTimeout(() => {
+
                             statusBlock.remove()
                         }, 5000)
                         formElements.forEach(input => {

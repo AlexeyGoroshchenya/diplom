@@ -18,6 +18,6 @@ scroll();
 // Добавил тут аргумент для передачи такого тарифа в расчет
 calc(100);
 validation();
-sendForm('.form-horizontal');
+sendForm('form');
 documents()
 slider();

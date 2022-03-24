@@ -10,6 +10,8 @@ export const documents = () => {
         sertificats.scrollIntoView({ block: "start", behavior: "smooth" });
         imageContainer.remove()
         unblockBody()
+        document.querySelector('.smooth-scroll').style.display = 'block';
+
     }
 
     const showBigImage = (e) => {
@@ -18,10 +20,10 @@ export const documents = () => {
         imageContainer.querySelector('img').setAttribute('src', e.target.closest('a').href)
         imageContainer.scrollIntoView({ block: "start", behavior: "smooth" });
         blockBody()
-
+        document.querySelector('.smooth-scroll').style.display = 'none';
     }
 
-    imageContainer.innerHTML = `<div><img src="" alt=""><span>+</span></div>`
+    imageContainer.innerHTML = `<div><img src="" alt=""><p><span>+</span></p></div>`
 
     sertificats.addEventListener('click', (e) => {
         e.preventDefault()
