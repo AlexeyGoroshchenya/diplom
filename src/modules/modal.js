@@ -38,9 +38,7 @@ export const modal = () => {
                 closeModal(servicesModal, 'services-modal--opened')
             }
         })
-        headerModal.classList.remove('header-modal--opened');
-
-        servicesModal.classList.remove('services-modal--opened');
+        
 
     }
 

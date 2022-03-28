@@ -7,6 +7,9 @@ import { validation } from './modules/validation';
 import { sendForm } from './modules/sendForm';
 import { documents } from './modules/documents';
 import { slider } from './modules/slider';
+import { burger } from './modules/burger';
+import { reviews } from './modules/reviews';
+
 
 modal();
 swiper();
@@ -21,3 +24,5 @@ validation();
 sendForm('form');
 documents()
 slider();
+burger();
+reviews();
