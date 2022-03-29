@@ -3,6 +3,8 @@ export const reviews = () => {
     const commentsContainer = document.querySelector('.comments-container');
 
     let currentReview = 0;
+    let interval;
+    let timeInterval = 10000;
 
     const userReviews = [
         {
@@ -125,31 +127,56 @@ export const reviews = () => {
     }
 
     const rotateReview = () => {
-        console.log(
-            userReviews[currentReview]
-        );
-        let first = userReviews[currentReview];
-        let second = userReviews[currentReview];
-        let third = userReviews[currentReview];
-        //render(0, 1, 2);
+
+        let first = (currentReview >= userReviews.length) ? 0 : currentReview;
+        let second = (first + 1 >= userReviews.length) ? 0 : first + 1;
+        let third = (first + 2 == userReviews.length) ? 0 : (first + 2 > userReviews.length) ? 1 : first + 2;
 
         currentReview++
         checkCurrent()
 
-        console.log(
-            userReviews[currentReview]
-        );
-
-        currentReview++
-        checkCurrent()
-
-        console.log(
-            userReviews[currentReview]
-        );
+        render(first, second, third);
+        /*
+                console.log(
+                    first, second, third
+                );
+                console.log(currentReview);
+        */
 
     }
-    setInterval(rotateReview, 10000)
-    //rotateReview()
+
+    const startReview = (timer = 1500) => {
+        interval = setInterval(() => {
+            rotateReview()
+        }, timer)
+    }
+
+    const stopReview = () => {
+        clearInterval(interval);
+    }
+
+    const init = () => {
+        startReview(timeInterval)
+    }
+
+    commentsContainer.addEventListener('mouseenter', (e) => {
+
+        if (e.target.matches('.comment-item')) stopReview(timeInterval);
+
+    }, true)
+
+    commentsContainer.addEventListener('mouseleave', (e) => {
+
+        if (e.target.matches('.comment-item')) startReview(timeInterval);
+
+    }, true)
+
+    init()
+
+
+
+    //setInterval(rotateReview, timeInterval)
+
 
 
 
