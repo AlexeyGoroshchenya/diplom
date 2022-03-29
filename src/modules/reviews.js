@@ -4,7 +4,7 @@ export const reviews = () => {
 
     let currentReview = 0;
     let interval;
-    let timeInterval = 10000;
+    let timeInterval = 5000;
 
     const userReviews = [
         {
@@ -136,13 +136,6 @@ export const reviews = () => {
         checkCurrent()
 
         render(first, second, third);
-        /*
-                console.log(
-                    first, second, third
-                );
-                console.log(currentReview);
-        */
-
     }
 
     const startReview = (timer = 1500) => {
@@ -172,12 +165,6 @@ export const reviews = () => {
     }, true)
 
     init()
-
-
-
-    //setInterval(rotateReview, timeInterval)
-
-
 
 
 
