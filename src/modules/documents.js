@@ -29,7 +29,7 @@ export const documents = () => {
         e.preventDefault()
 
         if (e.target.classList.contains('document-overlay')) {
-            console.dir(e.target.closest('a').href);
+
             showBigImage(e)
         }
     })

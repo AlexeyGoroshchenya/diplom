@@ -16,7 +16,7 @@ export const reviews = () => {
             дома. Еще один момент, после обращения, ко мне загород бесплатно отправили мастера
             для обсуждения моего заказа. Парень отработал на отлично, помог с решением
             технических моментов!`,
-            img: "images/users/face4.png",
+            img: "dist/images/users/face4.png",
             id: 1,
         },
         {
@@ -28,7 +28,7 @@ export const reviews = () => {
             в нашу комнату. За большой заказ нам предоставили очень хорошую скидку, и сделали
             всё в рассрочку без банка! Очень приятным было внимательное отношение сотрудников
             компании. Спасибо!`,
-            img: "images/users/face5.png",
+            img: "dist/images/users/face5.png",
             id: 2,
         },
         {
@@ -38,7 +38,7 @@ export const reviews = () => {
             компании «Профремонт», и решили принять участие в их программе. Нам предоставили
             хорошую рассрочку без банка и переплат. И нам удалось поменять окна во всей квартире
             сразу! Считаем, что нам очень повезло.`,
-            img: "images/users/face6.png",
+            img: "dist/images/users/face6.png",
             id: 3,
         },
         {
@@ -56,7 +56,7 @@ export const reviews = () => {
             text: `За большой заказ нам предоставили очень хорошую скидку, и сделали
             всё в рассрочку без банка! Очень приятным было внимательное отношение сотрудников
             компании. Спасибо! Почему бы нам не посмотреть на звезды, если не будет облаков?`,
-            img: "images/users/face5.png",
+            img: "dist/images/users/face5.png",
             id: 5,
         },
         {
@@ -66,13 +66,13 @@ export const reviews = () => {
             компании «Профремонт», и решили принять участие в их программе. Нам предоставили
             хорошую рассрочку без банка и переплат. И нам удалось поменять окна во всей квартире
             сразу! Считаем, что нам очень повезло.`,
-            img: "images/users/face4.png",
+            img: "dist/images/users/face4.png",
             id: 6,
         }
     ]
 
     const render = (index_1, index_2, index_3) => {
-        let defaultImg = 'images/users/default.png'
+        let defaultImg = 'dist/images/users/default.png'
         let userAvatar_1 = (userReviews[index_1].img === '') ? defaultImg : userReviews[index_1].img;
         let userAvatar_2 = (userReviews[index_2].img === '') ? defaultImg : userReviews[index_2].img;
         let userAvatar_3 = (userReviews[index_3].img === '') ? defaultImg : userReviews[index_3].img;
